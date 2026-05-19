@@ -1,0 +1,104 @@
+:root {
+  /* Colors - Tonal Depth Palette */
+  --primary: #4a40e0;
+  --primary-container: #9795ff;
+  --on-primary: #f4f1ff;
+  --secondary: #4647d3;
+  --secondary-container: #cdcdff;
+  --on-secondary-container: #2f2ebf;
+  
+  --surface: #f5f6f7;
+  --surface-container-low: #eff1f2;
+  --surface-container-high: #e0e3e4;
+  --surface-container-lowest: #ffffff;
+  
+  --on-surface: #2c2f30;
+  --on-surface-variant: #595c5d;
+  --outline-variant: #abadae;
+  
+  --error: #b41340;
+  
+  /* Typography */
+  --font-headline: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Spacing & Radii */
+  --radius-default: 0.5rem;
+  --radius-card: 1.5rem; /* xl scale from design system */
+  --radius-full: 9999px;
+  
+  /* Shadows & Effects */
+  --shadow-soft: 0 4px 32px -4px rgba(44, 47, 48, 0.06);
+  --glass-blur: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--surface);
+  color: var(--on-surface);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+input {
+  font-family: inherit;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Page Transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Design System Utilities */
+.tonal-card {
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.ghost-border {
+  border: 1px solid rgba(171, 189, 174, 0.1); 
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
